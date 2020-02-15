@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Awadhesh Kumar</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- css linking -->
+        <!-- libraries -->
+        <link rel="stylesheet" type="text/css" href="resources/css/lib/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <!-- libraries -->
+        <!-- custom -->
+        <link rel="stylesheet" type="text/css" href="resources/css/custom/profile.css">
+        <!-- custom -->
+        <!-- css linking -->
+        <!-- important js libraries -->
+        <script type="text/javascript" src="resources/js/lib/angularjs/angular.min.js"></script>
+        <!-- important js libraries -->
+    </head>
+    <body ng-app="template" ng-controller="IndexCtrl" ng-cloak>
+        <div class="jumbotron top-div">            
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 text-center">
+                    <img ng-src="{{profile.profile_pic}}" class="profile-pic img-thumbnail" alt="{{profile.name}}"/>                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 text-left">
+                    <h1>{{profile.name}}</h1>
+                    <p>
+                        <span ng-if="profile.location"><b>Location: </b>{{profile.location}}<br/></span>
+                        <span ng-if="profile.experience"><b>Development Experience: </b>{{profile.experience}}</span>
+                    </p>
+                    <a href="https://forms.gle/6S1QQVg3UjDotkNg6" target="_blank">Contact me</a>
+                </div>
+            </div>
+        </div>
+        <div class="container data-container">
+            <div class="row" ng-if="profile.overview">
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <h2>Overview</h2>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <p>{{profile.overview}}</p>
+                </div>
+            </div>
+            <div class="row" ng-if="profile.projects && profile.projects.length>0">
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <h2>Projects</h2>                    
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 project-div" ng-repeat="project in profile.projects">
+                    <h5><a ng-href="{{project.url}}" target="_blank">{{project.name}}</a></h5>
+                    <a ng-href="{{project.source}}" target="_blank" class="fa fa-code" title="Source code"></a><br/>
+                    <p>{{project.description}}</p>
+                    <b>Technologies: </b>
+                    <span class="badge badge-secondary technology-badge" ng-repeat="tech in project.technologies">{{tech}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <h2>Skills</h2>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12">
+                    <div class="progress">
+                        <div class="progress-bar {{working_area.progress_bar_class}}" style="width:{{working_area.progress}}%" 
+                            ng-repeat="working_area in profile.working_areas | orderBy:'-progress'">
+                            {{working_area.name}} ({{working_area.progress}}%)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 skill-header" ng-if="profile.skills.languages && profile.skills.languages.length>0">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <h5>Languages</h5>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 skill-div" ng-repeat="skill in profile.skills.languages | orderBy:'-progress'">
+                            <p>{{skill.name}}</p>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" style="width:{{skill.progress}}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 skill-header" ng-if="profile.skills.frameworks && profile.skills.frameworks.length>0">
+                    <h5>Frameworks</h5>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 skill-div" ng-repeat="skill in profile.skills.frameworks | orderBy:'-progress'">
+                            <p>{{skill.name}}</p>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" style="width:{{skill.progress}}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 skill-header" ng-if="profile.skills.databases && profile.skills.databases.length>0">
+                    <h5>Databases</h5>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 skill-div" ng-repeat="skill in profile.skills.databases | orderBy:'-progress'">
+                            <p>{{skill.name}}</p>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" style="width:{{skill.progress}}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 skill-header" ng-if="profile.skills.thirdpartyServices && profile.skills.thirdpartyServices.length>0">
+                    <h5>Third Party Services</h5>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 skill-div" ng-repeat="skill in profile.skills.thirdpartyServices | orderBy:'-progress'">
+                            <p>{{skill.name}}</p>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" style="width:{{skill.progress}}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 skill-header" ng-if="profile.skills.IDES && profile.skills.IDES.length>0">
+                    <h5>IDE Used</h5>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 skill-div" ng-repeat="skill in profile.skills.IDES | orderBy:'-progress'">
+                            <p>{{skill.name}}</p>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" style="width:{{skill.progress}}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12 col-md-12 skill-header" ng-if="profile.skills.otherTools && profile.skills.otherTools.length>0">
+                    <h5>Other Tools Used</h5>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 skill-div" ng-repeat="skill in profile.skills.otherTools | orderBy:'-progress'">
+                            <p>{{skill.name}}</p>
+                            <div class="progress">
+                                <div class="progress-bar bg-secondary" style="width:{{skill.progress}}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <!-- js linking -->
+        <!-- libraries -->
+        <script type="text/javascript" src="resources/js/lib/jquery/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="resources/js/lib/bootstrap/bootstrap.js"></script>
+        
+        <!-- libraries -->
+        <!-- custom -->
+        <script type="text/javascript" src="resources/js/custom/controller/index.js"></script>
+        <!-- custom -->
+        <!-- js linking -->
+    </body>
+</html>

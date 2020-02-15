@@ -1,0 +1,68 @@
+{
+    "name":"Awadhesh Kumar",
+    "profile_pic":"resources/images/default_profile_pic.jpg",
+    "location":"",
+    "experience":"4+ Years",
+    "overview":"Sample overview",
+    "working_areas":[
+        {"name":"Backend","progress":60,"progress_bar_class":"bg-success progress-bar-striped"},
+        {"name":"UI","progress":15,"progress_bar_class":"bg-info progress-bar-striped"},
+        {"name":"Mobility","progress":5,"progress_bar_class":"bg-warning progress-bar-striped"},
+        {"name":"Dev Ops","progress":20,"progress_bar_class":"progress-bar-striped"}
+    ],
+    "skills":{
+        "languages":[
+            {"name":"Java","progress":70},
+            {"name":"JS","progress":90},
+            {"name":"Python","progress":40},
+            {"name":"Ruby","progress":20}
+        ],
+        "frameworks":[
+            {"name":"Spring","progress":60},
+            {"name":"AngularJS","progress":80},
+            {"name":".Net","progress":20},
+            {"name":"RoR","progress":20},
+            {"name":"Django","progress":20},
+            {"name":"Bootstrap","progress":20},
+            {"name":"MEAN Stack","progress":40}
+        ],
+        "databases":[
+            {"name":"Postgres","progress":55},
+            {"name":"Mysql","progress":60},
+            {"name":"MongoDB","progress":45}
+        ],
+        "thirdpartyServices":[
+            {"name":"Twilio","progress":70},
+            {"name":"Google Services","progress":30},
+            {"name":"AWS","progress":40},
+            {"name":"Digital Ocean","progress":30}
+        ],
+        "IDES":[
+            {"name":"InteliJ","progress":10},
+            {"name":"VSCode","progress":70},
+            {"name":"Eclipse","progress":80},
+            {"name":"Visual Studio","progress":40}
+        ],
+        "otherTools":[
+            {"name":"Sonar","progress":20},
+            {"name":"Jenkins","progress":40},
+            {"name":"Linux","progress":60},
+            {"name":"Windows","progress":65},
+            {"name":"Mac","progress":10},
+            {"name":"SVN","progress":70},
+            {"name":"Git","progress":65},
+            {"name":"Solr","progress":40},
+            {"name":"Maven","progress":60},
+            {"name":"Gradle","progress":20}
+        ]
+    },
+    "projects":[
+            {"name":"Spring Boot 2 AddressBook","url":"","source":"https://github.com/awadhesh22791/spring_boot2_address_book","technologies":["spring-boot2","rest-api","hibernate","jpa","H2-Database"],"description":"Addressbook is backend api to save multiple addresses."},
+            {"name":"Tower of hanoi","url":"","source":"https://github.com/awadhesh22791/tower_of_hanoi","technologies":["html5","bootstrap","jquery","angularjs"],"description":"HTML5 implementation of tower of hanoi game."},
+            {"name":"Profile page","url":"https://awadhesh22791.github.io/","source":"https://github.com/awadhesh22791/awadhesh22791.github.io","technologies":["html5","bootstrap","jquery","angularjs"],"description":"Profile page."},
+            {"name":"ExpressJS Starter Project","url":"","source":"https://github.com/awadhesh22791/expressjs-template","technologies":["ExpressJS","NodeJS"],"description":"Expressjs template project."},
+            {"name":"ExpressJS MongoDB Starter Project","url":"","source":"https://github.com/awadhesh22791/expressjs-mongodb-template","technologies":["ExpressJS","NodeJS","MongoDB"],"description":"Expressjs starter project with mongodb integration."},
+            {"name":"ExpressJS MySQL Starter Project","url":"","source":"https://github.com/awadhesh22791/expressjs-mysql-template","technologies":["ExpressJS","NodeJS","MySQL"],"description":"Expressjs starter project with mysql integration."},
+            {"name":"C game project","url":"","source":"https://github.com/awadhesh22791/puzzle_pack","technologies":["Turbo C"],"description":"C game project."}
+        ]
+}
